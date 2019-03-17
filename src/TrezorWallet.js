@@ -3,9 +3,9 @@ import { publicToAddress } from 'ethereumjs-util';
 import BigNumber from 'bignumber.js';
 import { timeout, TimeoutError } from 'promise-timeout';
 import HDKey from 'hdkey';
+import config from './msg-config';
 
 const trezor = require('trezor.js');
-
 let currentSession = null;
 let currentDevice = null;
 const hexPrefix = '0x';
@@ -18,7 +18,7 @@ const defaultAddress = [
 	(0 | hardeningConstant) >>> 0,
 	0
 ];
-const deviceList = new trezor.DeviceList();
+const deviceList = new trezor.DeviceList({ config });
 let wallets = [];
 
 export default class TrezorWallet {
