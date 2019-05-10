@@ -101,10 +101,7 @@ export default class TrezorWallet {
 
   async signTransactionAsync(txData) {
     const accountIndex = this._getAccountIndex(txData.from);
-		const txDataFormatted = {...txData};
-		txDataFormatted.gasLimit = new BigNumber(txDataFormatted.gasLimit).toString(16);
-
-		const txDataClone = {...txDataFormatted};
+		const txDataClone = {...txData};
 
 		Object.keys(txDataClone).forEach(key => {
 			let val = txDataClone[key];
@@ -117,7 +114,7 @@ export default class TrezorWallet {
 			this._getAddressByIndex(accountIndex),
 			txDataClone.nonce,
 			txDataClone.gasPrice,
-			txDataClone.gasLimit,
+			txDataClone.gas,
 			txDataClone.to,
 			txDataClone.value,
 			txDataClone.data,
@@ -138,7 +135,7 @@ export default class TrezorWallet {
 			s: this._addHexPrefix(signed.s),
 			v: this._addHexPrefix(new BigNumber(signed.v).toString(16)),
 			r: this._addHexPrefix(signed.r.toString()),
-			...txDataFormatted
+			...txData
 		});
 		return hexPrefix + signedTx.serialize().toString('hex');
   }
