@@ -1,4 +1,4 @@
-import EthereumTx from 'ethereumjs-tx';
+import { Transaction as EthereumTx } from "ethereumjs-tx";
 import { publicToAddress } from 'ethereumjs-util';
 import BigNumber from 'bignumber.js';
 import { timeout, TimeoutError } from 'promise-timeout';
@@ -139,7 +139,7 @@ export default class TrezorWallet {
 			v: this._addHexPrefix(new BigNumber(signed.v).toString(16)),
 			r: this._addHexPrefix(signed.r.toString()),
 			...txDataFormatted
-		});
+		}, { chain: this.networkId });
 		return hexPrefix + signedTx.serialize().toString('hex');
   }
 
