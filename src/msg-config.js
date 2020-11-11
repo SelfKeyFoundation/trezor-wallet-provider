@@ -2,6 +2,408 @@ export default JSON.stringify({
     "package": null,
     "messages": [
         {
+            "name": "BinanceGetAddress",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "options": {},
+                    "type": "uint32",
+                    "name": "address_n",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "bool",
+                    "name": "show_display",
+                    "id": 2
+                }
+            ],
+            "enums": [],
+            "messages": [],
+            "options": {},
+            "oneofs": {}
+        },
+        {
+            "name": "BinanceAddress",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "string",
+                    "name": "address",
+                    "id": 1
+                }
+            ],
+            "enums": [],
+            "messages": [],
+            "options": {},
+            "oneofs": {}
+        },
+        {
+            "name": "BinanceGetPublicKey",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "options": {},
+                    "type": "uint32",
+                    "name": "address_n",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "bool",
+                    "name": "show_display",
+                    "id": 2
+                }
+            ],
+            "enums": [],
+            "messages": [],
+            "options": {},
+            "oneofs": {}
+        },
+        {
+            "name": "BinancePublicKey",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "bytes",
+                    "name": "public_key",
+                    "id": 1
+                }
+            ],
+            "enums": [],
+            "messages": [],
+            "options": {},
+            "oneofs": {}
+        },
+        {
+            "name": "BinanceSignTx",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "options": {},
+                    "type": "uint32",
+                    "name": "address_n",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "uint32",
+                    "name": "msg_count",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "sint64",
+                    "name": "account_number",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "string",
+                    "name": "chain_id",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "string",
+                    "name": "memo",
+                    "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "sint64",
+                    "name": "sequence",
+                    "id": 6
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "sint64",
+                    "name": "source",
+                    "id": 7
+                }
+            ],
+            "enums": [],
+            "messages": [],
+            "options": {},
+            "oneofs": {}
+        },
+        {
+            "name": "BinanceTxRequest",
+            "fields": [],
+            "enums": [],
+            "messages": [],
+            "options": {},
+            "oneofs": {}
+        },
+        {
+            "name": "BinanceTransferMsg",
+            "fields": [
+                {
+                    "rule": "repeated",
+                    "options": {},
+                    "type": "BinanceInputOutput",
+                    "name": "inputs",
+                    "id": 1
+                },
+                {
+                    "rule": "repeated",
+                    "options": {},
+                    "type": "BinanceInputOutput",
+                    "name": "outputs",
+                    "id": 2
+                }
+            ],
+            "enums": [],
+            "messages": [
+                {
+                    "name": "BinanceInputOutput",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "options": {},
+                            "type": "string",
+                            "name": "address",
+                            "id": 1
+                        },
+                        {
+                            "rule": "repeated",
+                            "options": {},
+                            "type": "BinanceCoin",
+                            "name": "coins",
+                            "id": 2
+                        }
+                    ],
+                    "enums": [],
+                    "messages": [],
+                    "options": {},
+                    "oneofs": {}
+                },
+                {
+                    "name": "BinanceCoin",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "options": {},
+                            "type": "sint64",
+                            "name": "amount",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "options": {},
+                            "type": "string",
+                            "name": "denom",
+                            "id": 2
+                        }
+                    ],
+                    "enums": [],
+                    "messages": [],
+                    "options": {},
+                    "oneofs": {}
+                }
+            ],
+            "options": {},
+            "oneofs": {}
+        },
+        {
+            "name": "BinanceOrderMsg",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "string",
+                    "name": "id",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "BinanceOrderType",
+                    "name": "ordertype",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "sint64",
+                    "name": "price",
+                    "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "sint64",
+                    "name": "quantity",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "string",
+                    "name": "sender",
+                    "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "BinanceOrderSide",
+                    "name": "side",
+                    "id": 6
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "string",
+                    "name": "symbol",
+                    "id": 7
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "BinanceTimeInForce",
+                    "name": "timeinforce",
+                    "id": 8
+                }
+            ],
+            "enums": [
+                {
+                    "name": "BinanceOrderType",
+                    "values": [
+                        {
+                            "name": "OT_UNKNOWN",
+                            "id": 0
+                        },
+                        {
+                            "name": "MARKET",
+                            "id": 1
+                        },
+                        {
+                            "name": "LIMIT",
+                            "id": 2
+                        },
+                        {
+                            "name": "OT_RESERVED",
+                            "id": 3
+                        }
+                    ],
+                    "options": {}
+                },
+                {
+                    "name": "BinanceOrderSide",
+                    "values": [
+                        {
+                            "name": "SIDE_UNKNOWN",
+                            "id": 0
+                        },
+                        {
+                            "name": "BUY",
+                            "id": 1
+                        },
+                        {
+                            "name": "SELL",
+                            "id": 2
+                        }
+                    ],
+                    "options": {}
+                },
+                {
+                    "name": "BinanceTimeInForce",
+                    "values": [
+                        {
+                            "name": "TIF_UNKNOWN",
+                            "id": 0
+                        },
+                        {
+                            "name": "GTE",
+                            "id": 1
+                        },
+                        {
+                            "name": "TIF_RESERVED",
+                            "id": 2
+                        },
+                        {
+                            "name": "IOC",
+                            "id": 3
+                        }
+                    ],
+                    "options": {}
+                }
+            ],
+            "messages": [],
+            "options": {},
+            "oneofs": {}
+        },
+        {
+            "name": "BinanceCancelMsg",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "string",
+                    "name": "refid",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "string",
+                    "name": "sender",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "string",
+                    "name": "symbol",
+                    "id": 3
+                }
+            ],
+            "enums": [],
+            "messages": [],
+            "options": {},
+            "oneofs": {}
+        },
+        {
+            "name": "BinanceSignedTx",
+            "fields": [
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "bytes",
+                    "name": "signature",
+                    "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "bytes",
+                    "name": "public_key",
+                    "id": 2
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "string",
+                    "name": "json",
+                    "id": 3
+                }
+            ],
+            "enums": [],
+            "messages": [],
+            "options": {},
+            "oneofs": {}
+        },
+        {
             "name": "MultisigRedeemScriptType",
             "fields": [
                 {
@@ -121,7 +523,7 @@ export default JSON.stringify({
             "name": "PublicKey",
             "fields": [
                 {
-                    "rule": "required",
+                    "rule": "optional",
                     "options": {},
                     "type": "HDNodeType",
                     "name": "node",
@@ -1974,8 +2376,8 @@ export default JSON.stringify({
                 {
                     "rule": "optional",
                     "options": {},
-                    "type": "string",
-                    "name": "mnemonic",
+                    "type": "bytes",
+                    "name": "mnemonic_secret",
                     "id": 4
                 },
                 {
@@ -2026,6 +2428,13 @@ export default JSON.stringify({
                     "type": "uint32",
                     "name": "reset_word_pos",
                     "id": 11
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "uint32",
+                    "name": "mnemonic_type",
+                    "id": 12
                 }
             ],
             "enums": [],
@@ -3058,23 +3467,9 @@ export default JSON.stringify({
                 {
                     "rule": "optional",
                     "options": {},
-                    "type": "uint32",
-                    "name": "signature_v",
+                    "type": "string",
+                    "name": "signature",
                     "id": 1
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "bytes",
-                    "name": "signature_r",
-                    "id": 2
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "bytes",
-                    "name": "signature_s",
-                    "id": 3
                 }
             ],
             "enums": [],
@@ -3154,6 +3549,15 @@ export default JSON.stringify({
         {
             "name": "EthereumAddress",
             "fields": [
+                {
+                    "rule": "optional",
+                    "options": {
+                        "deprecated": true
+                    },
+                    "type": "bytes",
+                    "name": "old_address",
+                    "id": 1
+                },
                 {
                     "rule": "optional",
                     "options": {},
@@ -4071,6 +4475,13 @@ export default JSON.stringify({
                     "type": "uint32",
                     "name": "auto_lock_delay_ms",
                     "id": 6
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "uint32",
+                    "name": "display_rotation",
+                    "id": 7
                 }
             ],
             "enums": [
@@ -4725,6 +5136,20 @@ export default JSON.stringify({
                     "type": "bool",
                     "name": "is_subaddress",
                     "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "bytes",
+                    "name": "original",
+                    "id": 4
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "bool",
+                    "name": "is_integrated",
+                    "id": 5
                 }
             ],
             "enums": [],
@@ -4800,6 +5225,13 @@ export default JSON.stringify({
                     "type": "bytes",
                     "name": "rsig_parts",
                     "id": 6
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "uint32",
+                    "name": "bp_version",
+                    "id": 7
                 }
             ],
             "enums": [],
@@ -4844,6 +5276,13 @@ export default JSON.stringify({
                     "type": "uint32",
                     "name": "minor",
                     "id": 5
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "bytes",
+                    "name": "payment_id",
+                    "id": 6
                 }
             ],
             "enums": [],
@@ -5033,6 +5472,27 @@ export default JSON.stringify({
                             "type": "uint32",
                             "name": "integrated_indices",
                             "id": 12
+                        },
+                        {
+                            "rule": "optional",
+                            "options": {},
+                            "type": "uint32",
+                            "name": "client_version",
+                            "id": 13
+                        },
+                        {
+                            "rule": "optional",
+                            "options": {},
+                            "type": "uint32",
+                            "name": "hard_fork",
+                            "id": 14
+                        },
+                        {
+                            "rule": "optional",
+                            "options": {},
+                            "type": "bytes",
+                            "name": "monero_version",
+                            "id": 15
                         }
                     ],
                     "enums": [],
@@ -5257,6 +5717,13 @@ export default JSON.stringify({
                     "type": "MoneroTransactionRsigData",
                     "name": "rsig_data",
                     "id": 3
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "bool",
+                    "name": "is_offloaded_bp",
+                    "id": 4
                 }
             ],
             "enums": [],
@@ -5459,6 +5926,13 @@ export default JSON.stringify({
                     "type": "bytes",
                     "name": "signature",
                     "id": 1
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "bytes",
+                    "name": "pseudo_out",
+                    "id": 2
                 }
             ],
             "enums": [],
@@ -6687,548 +7161,6 @@ export default JSON.stringify({
             "oneofs": {}
         },
         {
-            "name": "OntologyTransaction",
-            "fields": [
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "uint32",
-                    "name": "version",
-                    "id": 1
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "uint32",
-                    "name": "type",
-                    "id": 2
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "uint32",
-                    "name": "nonce",
-                    "id": 3
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "uint64",
-                    "name": "gas_price",
-                    "id": 4
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "uint64",
-                    "name": "gas_limit",
-                    "id": 5
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "string",
-                    "name": "payer",
-                    "id": 6
-                },
-                {
-                    "rule": "repeated",
-                    "options": {},
-                    "type": "OntologyTxAttribute",
-                    "name": "tx_attributes",
-                    "id": 7
-                }
-            ],
-            "enums": [],
-            "messages": [
-                {
-                    "name": "OntologyTxAttribute",
-                    "fields": [
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "uint32",
-                            "name": "usage",
-                            "id": 1
-                        },
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "bytes",
-                            "name": "data",
-                            "id": 2
-                        }
-                    ],
-                    "enums": [],
-                    "messages": [],
-                    "options": {},
-                    "oneofs": {}
-                }
-            ],
-            "options": {},
-            "oneofs": {}
-        },
-        {
-            "name": "OntologyGetPublicKey",
-            "fields": [
-                {
-                    "rule": "repeated",
-                    "options": {},
-                    "type": "uint32",
-                    "name": "address_n",
-                    "id": 1
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "bool",
-                    "name": "show_display",
-                    "id": 2
-                }
-            ],
-            "enums": [],
-            "messages": [],
-            "options": {},
-            "oneofs": {}
-        },
-        {
-            "name": "OntologyPublicKey",
-            "fields": [
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "bytes",
-                    "name": "public_key",
-                    "id": 1
-                }
-            ],
-            "enums": [],
-            "messages": [],
-            "options": {},
-            "oneofs": {}
-        },
-        {
-            "name": "OntologyGetAddress",
-            "fields": [
-                {
-                    "rule": "repeated",
-                    "options": {},
-                    "type": "uint32",
-                    "name": "address_n",
-                    "id": 1
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "bool",
-                    "name": "show_display",
-                    "id": 2
-                }
-            ],
-            "enums": [],
-            "messages": [],
-            "options": {},
-            "oneofs": {}
-        },
-        {
-            "name": "OntologyAddress",
-            "fields": [
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "string",
-                    "name": "address",
-                    "id": 1
-                }
-            ],
-            "enums": [],
-            "messages": [],
-            "options": {},
-            "oneofs": {}
-        },
-        {
-            "name": "OntologySignTransfer",
-            "fields": [
-                {
-                    "rule": "repeated",
-                    "options": {},
-                    "type": "uint32",
-                    "name": "address_n",
-                    "id": 1
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "OntologyTransaction",
-                    "name": "transaction",
-                    "id": 2
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "OntologyTransfer",
-                    "name": "transfer",
-                    "id": 3
-                }
-            ],
-            "enums": [],
-            "messages": [
-                {
-                    "name": "OntologyTransfer",
-                    "fields": [
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "OntologyAsset",
-                            "name": "asset",
-                            "id": 1
-                        },
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "uint64",
-                            "name": "amount",
-                            "id": 2
-                        },
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "string",
-                            "name": "from_address",
-                            "id": 3
-                        },
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "string",
-                            "name": "to_address",
-                            "id": 4
-                        }
-                    ],
-                    "enums": [
-                        {
-                            "name": "OntologyAsset",
-                            "values": [
-                                {
-                                    "name": "ONT",
-                                    "id": 1
-                                },
-                                {
-                                    "name": "ONG",
-                                    "id": 2
-                                }
-                            ],
-                            "options": {}
-                        }
-                    ],
-                    "messages": [],
-                    "options": {},
-                    "oneofs": {}
-                }
-            ],
-            "options": {},
-            "oneofs": {}
-        },
-        {
-            "name": "OntologySignedTransfer",
-            "fields": [
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "bytes",
-                    "name": "signature",
-                    "id": 1
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "bytes",
-                    "name": "payload",
-                    "id": 2
-                }
-            ],
-            "enums": [],
-            "messages": [],
-            "options": {},
-            "oneofs": {}
-        },
-        {
-            "name": "OntologySignWithdrawOng",
-            "fields": [
-                {
-                    "rule": "repeated",
-                    "options": {},
-                    "type": "uint32",
-                    "name": "address_n",
-                    "id": 1
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "OntologyTransaction",
-                    "name": "transaction",
-                    "id": 2
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "OntologyWithdrawOng",
-                    "name": "withdraw_ong",
-                    "id": 3
-                }
-            ],
-            "enums": [],
-            "messages": [
-                {
-                    "name": "OntologyWithdrawOng",
-                    "fields": [
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "uint64",
-                            "name": "amount",
-                            "id": 1
-                        },
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "string",
-                            "name": "from_address",
-                            "id": 2
-                        },
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "string",
-                            "name": "to_address",
-                            "id": 3
-                        }
-                    ],
-                    "enums": [],
-                    "messages": [],
-                    "options": {},
-                    "oneofs": {}
-                }
-            ],
-            "options": {},
-            "oneofs": {}
-        },
-        {
-            "name": "OntologySignedWithdrawOng",
-            "fields": [
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "bytes",
-                    "name": "signature",
-                    "id": 1
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "bytes",
-                    "name": "payload",
-                    "id": 2
-                }
-            ],
-            "enums": [],
-            "messages": [],
-            "options": {},
-            "oneofs": {}
-        },
-        {
-            "name": "OntologySignOntIdRegister",
-            "fields": [
-                {
-                    "rule": "repeated",
-                    "options": {},
-                    "type": "uint32",
-                    "name": "address_n",
-                    "id": 1
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "OntologyTransaction",
-                    "name": "transaction",
-                    "id": 2
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "OntologyOntIdRegister",
-                    "name": "ont_id_register",
-                    "id": 3
-                }
-            ],
-            "enums": [],
-            "messages": [
-                {
-                    "name": "OntologyOntIdRegister",
-                    "fields": [
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "string",
-                            "name": "ont_id",
-                            "id": 1
-                        },
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "bytes",
-                            "name": "public_key",
-                            "id": 2
-                        }
-                    ],
-                    "enums": [],
-                    "messages": [],
-                    "options": {},
-                    "oneofs": {}
-                }
-            ],
-            "options": {},
-            "oneofs": {}
-        },
-        {
-            "name": "OntologySignedOntIdRegister",
-            "fields": [
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "bytes",
-                    "name": "signature",
-                    "id": 1
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "bytes",
-                    "name": "payload",
-                    "id": 2
-                }
-            ],
-            "enums": [],
-            "messages": [],
-            "options": {},
-            "oneofs": {}
-        },
-        {
-            "name": "OntologySignOntIdAddAttributes",
-            "fields": [
-                {
-                    "rule": "repeated",
-                    "options": {},
-                    "type": "uint32",
-                    "name": "address_n",
-                    "id": 1
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "OntologyTransaction",
-                    "name": "transaction",
-                    "id": 2
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "OntologyOntIdAddAttributes",
-                    "name": "ont_id_add_attributes",
-                    "id": 3
-                }
-            ],
-            "enums": [],
-            "messages": [
-                {
-                    "name": "OntologyOntIdAddAttributes",
-                    "fields": [
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "string",
-                            "name": "ont_id",
-                            "id": 1
-                        },
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "bytes",
-                            "name": "public_key",
-                            "id": 2
-                        },
-                        {
-                            "rule": "repeated",
-                            "options": {},
-                            "type": "OntologyOntIdAttribute",
-                            "name": "ont_id_attributes",
-                            "id": 3
-                        }
-                    ],
-                    "enums": [],
-                    "messages": [
-                        {
-                            "name": "OntologyOntIdAttribute",
-                            "fields": [
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "string",
-                                    "name": "key",
-                                    "id": 1
-                                },
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "string",
-                                    "name": "type",
-                                    "id": 2
-                                },
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "string",
-                                    "name": "value",
-                                    "id": 3
-                                }
-                            ],
-                            "enums": [],
-                            "messages": [],
-                            "options": {},
-                            "oneofs": {}
-                        }
-                    ],
-                    "options": {},
-                    "oneofs": {}
-                }
-            ],
-            "options": {},
-            "oneofs": {}
-        },
-        {
-            "name": "OntologySignedOntIdAddAttributes",
-            "fields": [
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "bytes",
-                    "name": "signature",
-                    "id": 1
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "bytes",
-                    "name": "payload",
-                    "id": 2
-                }
-            ],
-            "enums": [],
-            "messages": [],
-            "options": {},
-            "oneofs": {}
-        },
-        {
             "name": "RippleGetAddress",
             "fields": [
                 {
@@ -8164,6 +8096,20 @@ export default JSON.stringify({
                     "type": "TezosDelegationOp",
                     "name": "delegation",
                     "id": 6
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "TezosProposalOp",
+                    "name": "proposal",
+                    "id": 7
+                },
+                {
+                    "rule": "optional",
+                    "options": {},
+                    "type": "TezosBallotOp",
+                    "name": "ballot",
+                    "id": 8
                 }
             ],
             "enums": [],
@@ -8458,6 +8404,92 @@ export default JSON.stringify({
                     "messages": [],
                     "options": {},
                     "oneofs": {}
+                },
+                {
+                    "name": "TezosProposalOp",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "options": {},
+                            "type": "bytes",
+                            "name": "source",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "options": {},
+                            "type": "uint64",
+                            "name": "period",
+                            "id": 2
+                        },
+                        {
+                            "rule": "repeated",
+                            "options": {},
+                            "type": "bytes",
+                            "name": "proposals",
+                            "id": 4
+                        }
+                    ],
+                    "enums": [],
+                    "messages": [],
+                    "options": {},
+                    "oneofs": {}
+                },
+                {
+                    "name": "TezosBallotOp",
+                    "fields": [
+                        {
+                            "rule": "optional",
+                            "options": {},
+                            "type": "bytes",
+                            "name": "source",
+                            "id": 1
+                        },
+                        {
+                            "rule": "optional",
+                            "options": {},
+                            "type": "uint64",
+                            "name": "period",
+                            "id": 2
+                        },
+                        {
+                            "rule": "optional",
+                            "options": {},
+                            "type": "bytes",
+                            "name": "proposal",
+                            "id": 3
+                        },
+                        {
+                            "rule": "optional",
+                            "options": {},
+                            "type": "TezosBallotType",
+                            "name": "ballot",
+                            "id": 4
+                        }
+                    ],
+                    "enums": [
+                        {
+                            "name": "TezosBallotType",
+                            "values": [
+                                {
+                                    "name": "Yay",
+                                    "id": 0
+                                },
+                                {
+                                    "name": "Nay",
+                                    "id": 1
+                                },
+                                {
+                                    "name": "Pass",
+                                    "id": 2
+                                }
+                            ],
+                            "options": {}
+                        }
+                    ],
+                    "messages": [],
+                    "options": {},
+                    "oneofs": {}
                 }
             ],
             "options": {},
@@ -8486,672 +8518,6 @@ export default JSON.stringify({
                     "type": "string",
                     "name": "operation_hash",
                     "id": 3
-                }
-            ],
-            "enums": [],
-            "messages": [],
-            "options": {},
-            "oneofs": {}
-        },
-        {
-            "name": "TronGetAddress",
-            "fields": [
-                {
-                    "rule": "repeated",
-                    "options": {},
-                    "type": "uint32",
-                    "name": "address_n",
-                    "id": 1
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "bool",
-                    "name": "show_display",
-                    "id": 2
-                }
-            ],
-            "enums": [],
-            "messages": [],
-            "options": {},
-            "oneofs": {}
-        },
-        {
-            "name": "TronAddress",
-            "fields": [
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "string",
-                    "name": "address",
-                    "id": 1
-                }
-            ],
-            "enums": [],
-            "messages": [],
-            "options": {},
-            "oneofs": {}
-        },
-        {
-            "name": "TronSignTx",
-            "fields": [
-                {
-                    "rule": "repeated",
-                    "options": {},
-                    "type": "uint32",
-                    "name": "address_n",
-                    "id": 1
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "bytes",
-                    "name": "ref_block_bytes",
-                    "id": 2
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "bytes",
-                    "name": "ref_block_hash",
-                    "id": 3
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "uint64",
-                    "name": "expiration",
-                    "id": 4
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "string",
-                    "name": "data",
-                    "id": 5
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "TronContract",
-                    "name": "contract",
-                    "id": 6
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "uint64",
-                    "name": "timestamp",
-                    "id": 7
-                }
-            ],
-            "enums": [],
-            "messages": [
-                {
-                    "name": "TronContract",
-                    "fields": [
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "TronTransferContract",
-                            "name": "transfer_contract",
-                            "id": 1
-                        },
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "TronTransferAssetContract",
-                            "name": "transfer_asset_contract",
-                            "id": 2
-                        },
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "TronVoteWitnessContract",
-                            "name": "vote_witness_contract",
-                            "id": 4
-                        },
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "TronWitnessCreateContract",
-                            "name": "witness_create_contract",
-                            "id": 5
-                        },
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "TronAssetIssueContract",
-                            "name": "asset_issue_contract",
-                            "id": 6
-                        },
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "TronWitnessUpdateContract",
-                            "name": "witness_update_contract",
-                            "id": 8
-                        },
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "TronParticipateAssetIssueContract",
-                            "name": "participate_asset_issue_contract",
-                            "id": 9
-                        },
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "TronAccountUpdateContract",
-                            "name": "account_update_contract",
-                            "id": 10
-                        },
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "TronFreezeBalanceContract",
-                            "name": "freeze_balance_contract",
-                            "id": 11
-                        },
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "TronUnfreezeBalanceContract",
-                            "name": "unfreeze_balance_contract",
-                            "id": 12
-                        },
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "TronWithdrawBalanceContract",
-                            "name": "withdraw_balance_contract",
-                            "id": 13
-                        },
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "TronUnfreezeAssetContract",
-                            "name": "unfreeze_asset_contract",
-                            "id": 14
-                        },
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "TronUpdateAssetContract",
-                            "name": "update_asset_contract",
-                            "id": 15
-                        },
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "TronProposalCreateContract",
-                            "name": "proposal_create_contract",
-                            "id": 16
-                        },
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "TronProposalApproveContract",
-                            "name": "proposal_approve_contract",
-                            "id": 17
-                        },
-                        {
-                            "rule": "optional",
-                            "options": {},
-                            "type": "TronProposalDeleteContract",
-                            "name": "proposal_delete_contract",
-                            "id": 18
-                        }
-                    ],
-                    "enums": [],
-                    "messages": [
-                        {
-                            "name": "TronAccountUpdateContract",
-                            "fields": [
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "string",
-                                    "name": "account_name",
-                                    "id": 1
-                                }
-                            ],
-                            "enums": [],
-                            "messages": [],
-                            "options": {},
-                            "oneofs": {}
-                        },
-                        {
-                            "name": "TronTransferContract",
-                            "fields": [
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "bytes",
-                                    "name": "to_address",
-                                    "id": 1
-                                },
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "uint64",
-                                    "name": "amount",
-                                    "id": 2
-                                }
-                            ],
-                            "enums": [],
-                            "messages": [],
-                            "options": {},
-                            "oneofs": {}
-                        },
-                        {
-                            "name": "TronTransferAssetContract",
-                            "fields": [
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "string",
-                                    "name": "asset_name",
-                                    "id": 1
-                                },
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "bytes",
-                                    "name": "to_address",
-                                    "id": 2
-                                },
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "uint64",
-                                    "name": "amount",
-                                    "id": 3
-                                }
-                            ],
-                            "enums": [],
-                            "messages": [],
-                            "options": {},
-                            "oneofs": {}
-                        },
-                        {
-                            "name": "TronVoteWitnessContract",
-                            "fields": [
-                                {
-                                    "rule": "repeated",
-                                    "options": {},
-                                    "type": "TronVote",
-                                    "name": "votes",
-                                    "id": 1
-                                }
-                            ],
-                            "enums": [],
-                            "messages": [
-                                {
-                                    "name": "TronVote",
-                                    "fields": [
-                                        {
-                                            "rule": "optional",
-                                            "options": {},
-                                            "type": "bytes",
-                                            "name": "vote_address",
-                                            "id": 1
-                                        },
-                                        {
-                                            "rule": "optional",
-                                            "options": {},
-                                            "type": "uint64",
-                                            "name": "vote_count",
-                                            "id": 2
-                                        }
-                                    ],
-                                    "enums": [],
-                                    "messages": [],
-                                    "options": {},
-                                    "oneofs": {}
-                                }
-                            ],
-                            "options": {},
-                            "oneofs": {}
-                        },
-                        {
-                            "name": "TronWitnessCreateContract",
-                            "fields": [
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "string",
-                                    "name": "url",
-                                    "id": 1
-                                }
-                            ],
-                            "enums": [],
-                            "messages": [],
-                            "options": {},
-                            "oneofs": {}
-                        },
-                        {
-                            "name": "TronWitnessUpdateContract",
-                            "fields": [
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "string",
-                                    "name": "update_url",
-                                    "id": 2
-                                }
-                            ],
-                            "enums": [],
-                            "messages": [],
-                            "options": {},
-                            "oneofs": {}
-                        },
-                        {
-                            "name": "TronAssetIssueContract",
-                            "fields": [
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "string",
-                                    "name": "name",
-                                    "id": 2
-                                },
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "string",
-                                    "name": "abbr",
-                                    "id": 3
-                                },
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "uint64",
-                                    "name": "total_supply",
-                                    "id": 4
-                                },
-                                {
-                                    "rule": "repeated",
-                                    "options": {},
-                                    "type": "TronFrozenSupply",
-                                    "name": "frozen_supply",
-                                    "id": 5
-                                },
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "uint32",
-                                    "name": "trx_num",
-                                    "id": 6
-                                },
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "uint32",
-                                    "name": "num",
-                                    "id": 7
-                                },
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "uint64",
-                                    "name": "start_time",
-                                    "id": 8
-                                },
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "uint64",
-                                    "name": "end_time",
-                                    "id": 9
-                                },
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "string",
-                                    "name": "description",
-                                    "id": 10
-                                },
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "string",
-                                    "name": "url",
-                                    "id": 11
-                                }
-                            ],
-                            "enums": [],
-                            "messages": [
-                                {
-                                    "name": "TronFrozenSupply",
-                                    "fields": [
-                                        {
-                                            "rule": "optional",
-                                            "options": {},
-                                            "type": "uint64",
-                                            "name": "frozen_amount",
-                                            "id": 1
-                                        },
-                                        {
-                                            "rule": "optional",
-                                            "options": {},
-                                            "type": "uint64",
-                                            "name": "frozen_days",
-                                            "id": 2
-                                        }
-                                    ],
-                                    "enums": [],
-                                    "messages": [],
-                                    "options": {},
-                                    "oneofs": {}
-                                }
-                            ],
-                            "options": {},
-                            "oneofs": {}
-                        },
-                        {
-                            "name": "TronParticipateAssetIssueContract",
-                            "fields": [
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "bytes",
-                                    "name": "to_address",
-                                    "id": 1
-                                },
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "string",
-                                    "name": "asset_name",
-                                    "id": 2
-                                },
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "uint64",
-                                    "name": "amount",
-                                    "id": 3
-                                }
-                            ],
-                            "enums": [],
-                            "messages": [],
-                            "options": {},
-                            "oneofs": {}
-                        },
-                        {
-                            "name": "TronFreezeBalanceContract",
-                            "fields": [
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "uint64",
-                                    "name": "frozen_balance",
-                                    "id": 1
-                                },
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "uint64",
-                                    "name": "frozen_duration",
-                                    "id": 2
-                                }
-                            ],
-                            "enums": [],
-                            "messages": [],
-                            "options": {},
-                            "oneofs": {}
-                        },
-                        {
-                            "name": "TronUnfreezeBalanceContract",
-                            "fields": [],
-                            "enums": [],
-                            "messages": [],
-                            "options": {},
-                            "oneofs": {}
-                        },
-                        {
-                            "name": "TronUnfreezeAssetContract",
-                            "fields": [],
-                            "enums": [],
-                            "messages": [],
-                            "options": {},
-                            "oneofs": {}
-                        },
-                        {
-                            "name": "TronWithdrawBalanceContract",
-                            "fields": [],
-                            "enums": [],
-                            "messages": [],
-                            "options": {},
-                            "oneofs": {}
-                        },
-                        {
-                            "name": "TronUpdateAssetContract",
-                            "fields": [
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "string",
-                                    "name": "description",
-                                    "id": 1
-                                },
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "string",
-                                    "name": "url",
-                                    "id": 2
-                                }
-                            ],
-                            "enums": [],
-                            "messages": [],
-                            "options": {},
-                            "oneofs": {}
-                        },
-                        {
-                            "name": "TronProposalCreateContract",
-                            "fields": [
-                                {
-                                    "rule": "repeated",
-                                    "options": {},
-                                    "type": "TronProposalParameters",
-                                    "name": "parameters",
-                                    "id": 1
-                                }
-                            ],
-                            "enums": [],
-                            "messages": [
-                                {
-                                    "name": "TronProposalParameters",
-                                    "fields": [
-                                        {
-                                            "rule": "optional",
-                                            "options": {},
-                                            "type": "uint64",
-                                            "name": "key",
-                                            "id": 1
-                                        },
-                                        {
-                                            "rule": "optional",
-                                            "options": {},
-                                            "type": "uint64",
-                                            "name": "value",
-                                            "id": 2
-                                        }
-                                    ],
-                                    "enums": [],
-                                    "messages": [],
-                                    "options": {},
-                                    "oneofs": {}
-                                }
-                            ],
-                            "options": {},
-                            "oneofs": {}
-                        },
-                        {
-                            "name": "TronProposalApproveContract",
-                            "fields": [
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "uint64",
-                                    "name": "proposal_id",
-                                    "id": 1
-                                },
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "bool",
-                                    "name": "is_add_approval",
-                                    "id": 2
-                                }
-                            ],
-                            "enums": [],
-                            "messages": [],
-                            "options": {},
-                            "oneofs": {}
-                        },
-                        {
-                            "name": "TronProposalDeleteContract",
-                            "fields": [
-                                {
-                                    "rule": "optional",
-                                    "options": {},
-                                    "type": "uint64",
-                                    "name": "proposal_id",
-                                    "id": 1
-                                }
-                            ],
-                            "enums": [],
-                            "messages": [],
-                            "options": {},
-                            "oneofs": {}
-                        }
-                    ],
-                    "options": {},
-                    "oneofs": {}
-                }
-            ],
-            "options": {},
-            "oneofs": {}
-        },
-        {
-            "name": "TronSignedTx",
-            "fields": [
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "bytes",
-                    "name": "signature",
-                    "id": 1
-                },
-                {
-                    "rule": "optional",
-                    "options": {},
-                    "type": "bytes",
-                    "name": "serialized_tx",
-                    "id": 2
                 }
             ],
             "enums": [],
@@ -9689,22 +9055,6 @@ export default JSON.stringify({
                     "id": 230
                 },
                 {
-                    "name": "MessageType_TronGetAddress",
-                    "id": 250
-                },
-                {
-                    "name": "MessageType_TronAddress",
-                    "id": 251
-                },
-                {
-                    "name": "MessageType_TronSignTx",
-                    "id": 252
-                },
-                {
-                    "name": "MessageType_TronSignedTx",
-                    "id": 253
-                },
-                {
                     "name": "MessageType_CardanoSignTx",
                     "id": 303
                 },
@@ -9735,54 +9085,6 @@ export default JSON.stringify({
                 {
                     "name": "MessageType_CardanoSignedTx",
                     "id": 310
-                },
-                {
-                    "name": "MessageType_OntologyGetAddress",
-                    "id": 350
-                },
-                {
-                    "name": "MessageType_OntologyAddress",
-                    "id": 351
-                },
-                {
-                    "name": "MessageType_OntologyGetPublicKey",
-                    "id": 352
-                },
-                {
-                    "name": "MessageType_OntologyPublicKey",
-                    "id": 353
-                },
-                {
-                    "name": "MessageType_OntologySignTransfer",
-                    "id": 354
-                },
-                {
-                    "name": "MessageType_OntologySignedTransfer",
-                    "id": 355
-                },
-                {
-                    "name": "MessageType_OntologySignWithdrawOng",
-                    "id": 356
-                },
-                {
-                    "name": "MessageType_OntologySignedWithdrawOng",
-                    "id": 357
-                },
-                {
-                    "name": "MessageType_OntologySignOntIdRegister",
-                    "id": 358
-                },
-                {
-                    "name": "MessageType_OntologySignedOntIdRegister",
-                    "id": 359
-                },
-                {
-                    "name": "MessageType_OntologySignOntIdAddAttributes",
-                    "id": 360
-                },
-                {
-                    "name": "MessageType_OntologySignedOntIdAddAttributes",
-                    "id": 361
                 },
                 {
                     "name": "MessageType_RippleGetAddress",
@@ -9975,6 +9277,46 @@ export default JSON.stringify({
                 {
                     "name": "MessageType_EosSignedTx",
                     "id": 605
+                },
+                {
+                    "name": "MessageType_BinanceGetAddress",
+                    "id": 700
+                },
+                {
+                    "name": "MessageType_BinanceAddress",
+                    "id": 701
+                },
+                {
+                    "name": "MessageType_BinanceGetPublicKey",
+                    "id": 702
+                },
+                {
+                    "name": "MessageType_BinancePublicKey",
+                    "id": 703
+                },
+                {
+                    "name": "MessageType_BinanceSignTx",
+                    "id": 704
+                },
+                {
+                    "name": "MessageType_BinanceTxRequest",
+                    "id": 705
+                },
+                {
+                    "name": "MessageType_BinanceTransferMsg",
+                    "id": 706
+                },
+                {
+                    "name": "MessageType_BinanceOrderMsg",
+                    "id": 707
+                },
+                {
+                    "name": "MessageType_BinanceCancelMsg",
+                    "id": 708
+                },
+                {
+                    "name": "MessageType_BinanceSignedTx",
+                    "id": 709
                 }
             ],
             "options": {}
